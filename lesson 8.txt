@@ -1,0 +1,68 @@
+import json
+if __name__ == "__main__":
+     with open("product.json", "r", encoding="utf-8") as file:
+        products = json.load(file)
+        # total_price = 0
+        # products_black = []
+        # products_a_plus_plus = []
+        # for i in products:
+        #      if "Чорний" in i["colors"]:
+        #         print(i["title"])
+        #         products_black.append(i["title"])
+        #         print(i['features'])
+
+        # for i in products:
+        #     for feature in i['features']:
+        #         if feature['value'] == "А++":
+        #             print(i['title'], feature)
+
+
+
+
+        #print(products_black)
+
+
+
+        # id = 13
+        # for i in products:
+        #     with open(f"venv/{i['id']}.json", "w", encoding="cp1251") as file:
+        #         json.dump(i, file)
+
+
+        # with open(f"venv/{id}.json", "r") as file:
+        #     product = json.load(file)
+        #     print(product)
+
+        # for i in products:
+        #     print(i['price'])
+
+
+
+        # чистка від повторювальних данних
+
+    # some_arr = [1, 2, 3, 2]
+    # new_arr = []
+    # for el in some_arr:
+    #     if el in new_arr:
+    #         continue
+    #     else:
+    #         new_arr.append(el)
+    #
+    #     if el not in new_arr:
+    #         new_arr.append(el)
+    # print(new_arr)
+
+        prices = []
+        for i in products:
+            products_price = int(i['price'].replace("NBSP", "").replace(" ", ""))
+            prices.append(products_price)
+
+        print(prices)
+
+        abs_price = sorted(prices)
+        print(abs_price)
+        desc_price = sorted(prices, reverse=True)
+        print(desc_price)
+
+        for i in range(5):
+            print(desc_price[i])
